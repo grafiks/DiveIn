@@ -1,0 +1,59 @@
+<!DOCTYPEhtml>
+<html>
+
+<head>
+	<title>Reservations</title>
+	<style>
+		#subtitle{
+		font-size: 5vmin;
+		text-align: center;
+		color: white;
+		background-color: indigo;
+		}
+		
+		#lanes{
+		height: 400px;
+		width: 600px;
+		}
+		
+		#mainsection{
+		font-size: 4vmin;
+		text-align: center;
+		background-color: #D7ADF9;
+		}
+		
+		#mainbutton{
+		color: white;
+		background-color: blue;
+		margin: 10px 10px;
+		padding: 15px 20px;
+		float: right;
+		}
+	</style>
+</head>
+
+<body>
+	<div id = 'subtitle'>
+		<p>Reserve a Lane</p>
+	</div>
+	<div id = 'mainsection'>
+		<img id = 'lanes' src='pool.png'/>
+		<p>Party size:</p>
+		<input type="text"/>
+		<p>Lane (see above):</p>
+		<input type="text"/>
+		<p>Required items:</p>
+		<input type="text"/>
+		<button id = 'mainbutton' type='button' onclick = reserve()>Reserve</button>
+	</div>
+</body>
+
+<script>
+	function reserve(){
+	var message = "You have now reserved a lane.";
+	alert(message);
+	}
+	
+</script>
+
+</html>

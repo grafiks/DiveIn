@@ -1,0 +1,83 @@
+<!DOCTYPEhtml>
+<html>
+
+<head>
+	<title>Dive IN!</title>
+	<style>
+		#header{
+		font-size: 7vmin;
+		color: red;
+		background-color: turquoise;
+		size: 200px;
+		text-align: center;
+		}
+		
+		#subtitle{
+		font-size: 5vmin;
+		color: white;
+		background-color: indigo;
+		size: 40px;
+		text-align: center;
+		}
+		
+		#ponyo{
+		height: 300px;
+		width: 500px;
+		}
+		
+		#mainsection{
+		background-color: #D7ADF9;
+		font-size: 4vmin;
+		}
+		
+		#tableofcontents{
+		display: grid;
+		place-items: center;
+		border: 10px solid lightblue;
+		font-size: 4vmin;
+		word-break: keep-all;
+		}
+		
+		#contacts{
+		text-align: center;
+		font-size: 4vmin;
+		border: 10px solid blue;
+		}
+		
+		#mainbutton{
+		background-color: blue;
+		color: white;
+		margin: 10px;
+		padding: 15px 25px;
+		display: inline-block;
+		}
+	</style>
+		
+</head>
+
+<body>
+	<div id = 'header'>
+		<p>The Guide to Dive In</p>
+	</div>
+	<div id = 'subtitle'>
+		<p>Welcome to Dive In!</p>
+	</div>
+	<div id = 'mainsection'>
+		<img id ='ponyo' src='swimming.png'/>
+		<p>Dive In is a swimming program for people of all ages. You can reserve lanes, get swimming lessons, and even join swim teams. Click on the section you want in the table of contents for further information.</p>
+		<button id = 'mainbutton' type='button' onclick="location.href='registering.html'">Register</button>
+		<button id = 'mainbutton' type='button' onclick="location.href='password2.html'">Log Out</button>
+		<button id = 'mainbutton' type='button' onclick="location.href='reservations.html'">Reserve a Lane</button>
+	</div>
+	<div id = 'tableofcontents'>
+		<p>Table of Contents</p>
+		<a href="lessons.html">Lessons</a>
+		<a href="swimteams.html">Swim Teams</a>
+		<a href="maps.html">Maps</a>
+	</div>
+	<div id = 'contacts'>
+		<p>Call 314-159-2653 for more information</p>
+	</div>
+</body>
+
+</html>

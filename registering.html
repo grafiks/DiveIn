@@ -1,0 +1,60 @@
+<!DOCTYPEhtml>
+<html>
+
+<head>
+	<title>Registering</title>
+	<style>
+		#subtitle{
+		font-size: 5vmin;
+		text-align: center;
+		color: white;
+		background-color: indigo;
+		}
+		
+		#mainsection{
+		font-size: 4vmin;
+		text-align: center;
+		background-color: #D7ADF9;
+		}
+		
+		#mainbutton{
+		background-color: blue;
+		color: white;
+		margin: 10px;
+		padding: 15px 25px;
+		display: inline-block;
+		}
+	</style>
+</head>
+
+<body>
+	<div id = 'subtitle'>
+		<p>Registering</p>
+	</div>
+	<div id = 'mainsection'>
+		<p>Fill in the boxes</p>
+		<p>Name</p>
+		<input type="text"/>
+		<p>Age</p>
+		<input type="text"/>
+		<p>Lifeguard, teacher, or director?</p>
+		<input type="text"/>
+		<button id = 'mainbutton' type='button' onclick = approve()>Register</button>
+		<button id = 'mainbutton' type='button' onclick = "location.href='swimming.html'">Back</button>
+	</div>
+	
+</body>
+
+<script>
+	function approve(){	
+		var message = "You have now registered for Dive In.";
+		alert(message);
+		
+		
+	}
+		//var name = prompt("Enter your full name.");
+		//if(name !== null){
+		//$('#mainsection').append("<p onclick = un-register()>'+name+'</p>")
+</script>
+
+</html>
