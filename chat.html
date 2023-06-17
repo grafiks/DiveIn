@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Social APP</title>
+    <style>
+        #top{
+        font-size: 6vmin;
+        text-align: center;
+        background-color: aquamarine;
+        }
+
+        #mainbutton{
+		background-color: blue;
+		color: white;
+		margin: 10px;
+		padding: 15px 25px;
+		display: inline-block;
+		}
+
+        #mainsection{
+        background-color: white;
+        border-radius: 25px;
+        word-break: keep-all;
+        font-size: 3vmin;
+        text-align: center;
+        }
+
+        body{
+        background-color: lightseagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id = 'top'>
+        <p>Social APP</p>
+        <img id = 'typing' src='typing.png'/>
+    </div>
+    <div id = 'mainsection'>
+        <input id = 'textbox' type ="text"/>
+        <button id = 'mainbutton' type ='button' onclick=sendMessage()>Send</button>
+        <button id = 'mainbutton' type ='button' onclick="location.href='ad.html'">Back Home</button>
+    </div>
+</body>
+<script>
+    function sendMessage(){
+        var message = document.createElement("div");
+        message.innerHTML = document.getElementById("textbox").value;
+        document.getElementById("mainsection").appendChild(message);
+    }
+</script>
+
+</html>
