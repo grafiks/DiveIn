@@ -13,23 +13,41 @@
 
 <body>
     <div id = 'info'>
-            more test
     </div>
     <div id = 'mainsection'>
-            some test<br>
-            some test<br>
-            some test<br>
-            some test<br>
-            some test<br>
-            some test<br>
-            some test<br>
-            some test<br>
-            some test<br>
-            some test<br>
+      <canvas id = 'canvas' width="1024" height="1024"></canvas>
     </div>
 </body>
 
 <script>
+    var board = [
+        "###############",
+        "#             #",
+        "#             #",
+        "#             #",
+        "#    #####    #",
+        "#    #####    #",
+        "#             #",
+        "#             #",
+        "#             #",
+        "###############"
+    ];
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var currentYoffset = 0;
+    var squareSize = 60;
+    board.forEach(function checkline(line){
+        line = line.split('');
+        var currentXoffset = 0;
+        line.forEach(function checkCharacter(character){
+            if(character == '#'){
+                ctx.fillStyle = "black";
+                ctx.fillRect(currentXoffset, currentYoffset, squareSize, squareSize);        
+            }
+        currentXoffset += squareSize;
+        });
+        currentYoffset += squareSize;
+    });
 </script>
 
 </html>
