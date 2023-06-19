@@ -6,7 +6,7 @@
     <style>
         #mainsection{
             background: url("water.png");
-            background-size: cover;
+            background-size: contain;
         }
     </style>
 </head>
@@ -15,27 +15,30 @@
     <div id = 'info'>
     </div>
     <div id = 'mainsection'>
-      <canvas id = 'canvas' width="1024" height="1024"></canvas>
+      <canvas id = 'canvas' width="1024" height="1024">      
+      </canvas>
+      <img id = 'ball' src='ball.png'/>
+      <img id = 'hoop' src='hoop.png'/>
     </div>
 </body>
 
 <script>
-    var board = [
+   var board = [
         "###############",
         "#             #",
         "#             #",
         "#             #",
         "#    #####    #",
-        "#    #####    #",
-        "#             #",
-        "#             #",
-        "#             #",
+        "#    ######    #",
+        "#         #    #",
+        "#         #    #",
+        "#         #    #",
         "###############"
     ];
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     var currentYoffset = 0;
-    var squareSize = 60;
+    var squareSize = 100;
     board.forEach(function checkline(line){
         line = line.split('');
         var currentXoffset = 0;
@@ -48,6 +51,20 @@
         });
         currentYoffset += squareSize;
     });
+    var gameControl = {
+        processInput: function (keyPressed) {
+            var key = keyPressed.key.toLowerCase();
+            var targetDirection = ball.facing;
+            if (key == "w") targetDirection = "N";
+            if (key == "a") targetDirection = "W";
+            // TODO: more
+        },
+    
+        startGame: function() {
+            window.addEventListener("keypress", gameControl.processInput, false);
+            game.tick();
+        }
+    };
 </script>
 
 </html>
