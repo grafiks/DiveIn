@@ -2,22 +2,37 @@
 <html>
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Water Basketball</title>
     <style>
         #mainsection{
             background: url("water.png");
-            background-size: contain;
+            background-size: cover;
+        }
+
+        #mainbutton{
+        color: white;
+		background-color: blue;
+		margin: 10px 10px;
+		padding: 15px 20px;
+		float: right;
         }
     </style>
 </head>
 
 <body>
-    <div id = 'info'>
+    <div id = 'info' style="text-align: center; font-size: 3vmin; background-color: mediumspringgreen;">
+        <p style ="font-size: 6vmin;">Water Basketball</p>
+        <p>Move the ball to the hoop, avoiding the obstacles. You have 1 minute to score points.</p>
+        <p id = 'timer'>Press Start</p>
+        <button id = 'mainbutton' type ='button' onclick = playGame()>Start</button>
+        <button id = 'mainbutton' type ='button' onclick ="location.href='ad.html'">Back Home</button>
     </div>
     <div id = 'mainsection'>
       <canvas id = 'canvas' width="1024" height="1024">      
       </canvas>
-      <img id = 'ball' src='ball.png'/>
+      <img class = 'ball' src='ball.png'/>
       <img id = 'hoop' src='hoop.png'/>
     </div>
 </body>
@@ -51,20 +66,27 @@
         });
         currentYoffset += squareSize;
     });
-    var gameControl = {
-        processInput: function (keyPressed) {
-            var key = keyPressed.key.toLowerCase();
-            var targetDirection = ball.facing;
-            if (key == "w") targetDirection = "N";
-            if (key == "a") targetDirection = "W";
-            // TODO: more
-        },
-    
-        startGame: function() {
-            window.addEventListener("keypress", gameControl.processInput, false);
-            game.tick();
-        }
-    };
+
+    /*
+    $('#hoop').click( function() {
+        $('#mainsection').append("<img class = 'ball' src='ball.png'/>");
+        $('.ball').draggable();
+    });
+    */
+
+    function playGame() {
+        var score = 0;
+        var gameLength = 60;
+        var round = setInterval( function() {
+            if(gameLength > 0) {
+                gameLength = gameLength - 1;
+                document.getElementById("timer").innerHTML = gameLength + " seconds left";
+            } else {
+                clearInterval(round)
+            }
+        }, 1000);
+    };    
+
 </script>
 
 </html>
