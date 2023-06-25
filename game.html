@@ -8,7 +8,7 @@
     <style>
         #mainsection{
             background: url("water.png");
-            background-size: cover;
+            background-size: cover; 
         }
 
         #mainbutton{
@@ -26,15 +26,20 @@
         <p style ="font-size: 6vmin;">Water Basketball</p>
         <p>Move the ball to the hoop, avoiding the obstacles. You have 1 minute to score points.</p>
         <p id = 'timer'>Press Start</p>
+        <p id = 'scoreboard'></p>
         <button id = 'mainbutton' type ='button' onclick = playGame()>Start</button>
         <button id = 'mainbutton' type ='button' onclick ="location.href='ad.html'">Back Home</button>
     </div>
-    <div id = 'mainsection'>
-      <canvas id = 'canvas' width="1024" height="1024">      
-      </canvas>
-      <img class = 'ball' src='ball.png'/>
-      <img id = 'hoop' src='hoop.png'/>
+    <div id = 'hoop'>
+        <img id = 'hoop' src='hoop.png'/> 
     </div>
+    <div id = 'mainsection' style="height: 1024px; width: 1024px;">
+        <img id = 'dispenser' src='dispenser.png'/>
+        <canvas id = 'canvas' width="1024" height="1024">      
+        </canvas>
+
+    </div>
+
 </body>
 
 <script>
@@ -67,12 +72,18 @@
         currentYoffset += squareSize;
     });
 
-    /*
-    $('#hoop').click( function() {
+    //BUG: draggable not working
+    $('#dispenser').click( function() {
         $('#mainsection').append("<img class = 'ball' src='ball.png'/>");
         $('.ball').draggable();
     });
-    */
+    
+    $('#hoop').droppable({
+		drop: function(){
+			score = score+1;
+			document.getElementById("scoreboard").innerHTML = "Your score: '+score+'";
+			}
+	});
 
     function playGame() {
         var score = 0;
