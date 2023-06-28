@@ -8,11 +8,35 @@
         background-image: url('background.png');
         background-size: cover;
         }
+
+        #percent79{
+        height: 10px;
+        width: 15px;
+        float: right;
+        }
+
+        #app{
+        height: 60px;
+        width: 60px;
+        }
     </style>
 </head>
 
 <body>
-    <img id = 'percent79' src='battery.png'/>
+    <img id = 'percent79' src='battery.png' onclick=showPercentage()/>
+    <p style="font-size: 7vmin; text-align: center;">Hedgehog Academy: A Learning Computer</p>
+    <img id = 'app' src='divein.png' onclick="location.href='password2.html'"/>
+    <img id = 'app' src='stevesblog.png' onclick="location.href='StevesBlog/password.html'"/>
+    <img id = 'app' src='math.png'/>
+    <img id = 'app' src='reading.png'/>
+    <img id = 'app' src='science.png'/>
 </body>
+
+<script>
+    function showPercentage(){
+        var number = "79%";
+        alert(number);
+    }
+</script>
 
 </html>
