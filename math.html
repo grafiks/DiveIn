@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Math Hedgehog</title>
+    <style>
+        #topbar{
+        height: 200px;
+        padding: 80px;
+        font-size: 7vmin;
+        text-align: center;
+        color: cornflowerblue;
+        background-color: gold
+        }
+
+        #mainsection{
+        font-size: 4vmin;
+        text-align: center;
+        background-color: lemonchiffon;
+        }
+
+        #mainbutton{
+        color: white;
+		background-color:blueviolet;
+		margin: 10px 10px;
+		padding: 15px 20px;
+		float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id = 'topbar'>
+        <p>Welcome to Math Hedgehog!</p>
+    </div>
+    <div id = 'mainsection'>
+        <p>Points: </p>
+        <input id = 'box' type="text"/>
+        <p>Practice Suggestion: </p>
+        <input id = 'box' type="text"/>
+        <button id = 'mainbutton' type='button' onclick="send()">Print</button>
+        <button id = 'mainbutton' onclick="giveProblem()">Problem of the Day</button>
+    </div>
+</body>
+
+<script>
+    function send(){
+        var message = "We will print the practice ASAP.";
+        alert(message);
+    }
+
+    function giveProblem(){
+        alert("What is 1+.....+100?");
+        alert("5050");
+    }
+</script>
+
+</html>
