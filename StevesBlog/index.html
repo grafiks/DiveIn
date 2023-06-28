@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<link rel="stylesheet"  type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>Steve'sBlog</title>
+
+</head>
+
+<body>
+
+	<div id = 'topbar'>
+		<p> Hi! I'm Steve Alexander House. Welcome to my blog!</p>
+		<img id = 'stevealex' src='stevealex.jpg'/>
+	</div>
+	<div id = 'topbar2'>
+		<p> <b> Hi! Welcome to the introduction page!</b> </p>
+	 </div>
+	<div id = 'mainsection'>
+		<p> Where am I from?: Chessland </p>
+		<p> Who am I?: The Minecraft Center executive director </p>
+		<p> What do I do?: Play Minecraft and tell the other workers what to do </p>
+		<p> My favorite things are: My microphone and recording camera </p>
+		<p> My best friend is: Stephen Lao </p>
+		<button id= 'mainbutton' type='button' onclick = sayHello()>Say Hi!</button>
+		<button id= 'mainbutton' type='button' onclick = explore()>Go Exploring!</button>
+		<button id= 'mainbutton' type='button' onclick = tellStory()>Tell a Story!</button>
+		<button id= 'mainbutton' onclick="location.href='anime.html'">Go to Animation Page</button>
+		<button id= 'mainbutton' onclick="location.href='music.html'">Go to Music Page</button>
+		<!--<button id= 'mainbutton' onclick="location.href='games.html'">Play a Game!</button>-->
+		<!--<button id= 'mainbutton' onclick="location.href='building.html'">Build Something!</button>-->
+		<button id= 'mainbutton' onclick="location.href='password.html'">Log out</button>
+	</div>
+	
+	
+	<div id = 'loop-section'>
+	</div>
+</body>
+
+	<script>
+	
+		function sayHello(){
+			var name = prompt("Hi, what's your name?");
+			if(name !== null){
+				window.alert("It's nice to meet you "+name+"! Thanks for checking out my blog!");
+			}
+		}
+		
+ 		function explore(){	
+			var locations = ['a mineshaft', 'a pyramid', 'a temple', ' a village', 'an igloo', 'an underwater palace', 'a mansion'];
+			var items = ['some gold', 'a book', 'horse armor', 'a pumpkin', '4 TNTs', 'redstone', 'a cauldron', 'saddles', 'a block of obsidian'];
+		
+			var chosenLocation = locations[Math.floor(Math.random()*locations.length)];
+			document.getElementById("loop-section").innerHTML = "";
+			
+			$('#loop-section').append("<p>I went exploring earlier and found "+chosenLocation+". Inside I found: </p>");
+			for (i = 1; i < 4; i++) {
+			
+				var foundItem = items[Math.floor(Math.random()*items.length)];
+				
+				if(i==3){
+					$('#loop-section').append("<p>and "+foundItem+".</p>");
+				}else{
+					$('#loop-section').append("<p>"+foundItem+", </p>");
+				}
+			}
+		}
+			
+		function tellStory(){
+			var favCharacter = prompt("Who is your favorite Minecraft character?");
+			var favMonster = prompt("What is your favorite Minecraft monster? Creepers are not included.");
+			
+			if(favCharacter && favMonster){
+
+			}
+
+			var build = window.prompt(favCharacter+" is in a new area and it's getting dark! What should they build? Type bed, house or nothing.");
+			
+			if(build == "nothing"){
+				window.alert(favCharacter+" spends their day playing and has to run from "+favMonster+"s at night. Try again!");
+				
+			}
+			if(build == "bed"){
+				  window.alert(favCharacter+" builds a bed and goes to sleep. They wake up surrounded by "+favMonster+"s! Try again!");
+			}
+			if(build == "house"){
+				window.alert(favCharacter+" builds themselves a nice, cosy house to keep the "+favMonster+"s out.");
+				wolf = window.prompt("A wolf appears! Does "+favCharacter+" run or tame it? Type tame or run.");
+			
+				if(wolf == "tame"){
+					window.alert(favCharacter+" tames the wolf. It keeps them safe from monsters. Good job!");
+				}else{
+					window.alert(favCharacter+" runs from the wolf and has to leave the house behind! Try again!");
+				}	
+			}
+		}
+	
+</script>
+ 
+</html>

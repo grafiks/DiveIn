@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>MusicBlog</title>
+</head>
+
+<body>
+
+<div id='topbar2'>
+	<p> <b>Hi! Welcome to the music page!</b> </p>
+	<img id ='note' src='noteblock.png'/>
+</div>
+<div id='mainsection2'>
+	<img class = 'pianokey' id='note1' onclick=playnote(262) src = 'key.png'/>
+	<img class = 'pianokey' id='note2' onclick=playnote(294) src = 'key.png'/>
+	<img class = 'pianokey' id='note3' onclick=playnote(330) src = 'key.png'/>
+	<img class = 'pianokey' id='note4' onclick=playnote(349) src = 'key.png'/>
+	<img class = 'pianokey' id='note5' onclick=playnote(392) src = 'key.png'/>
+	<img class = 'pianokey' id='note6' onclick=playnote(440) src = 'key.png'/>
+	<img class = 'pianokey' id='note7' onclick=playnote(494) src = 'key.png'/>
+	<img class = 'pianokey' id='note8' onclick=playnote(523) src = 'key.png'/>
+</div>
+</body>
+
+<script>
+
+var context = new AudioContext()
+
+function playnote(frequency){
+
+	var o = context.createOscillator()
+	var g = context.createGain()
+	o.connect(g)
+	g.connect(context.destination) 
+	o.type = 'sine'
+	o.start(0);
+	o.frequency.value = frequency;
+	var notelength = 1;
+	
+	g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + notelength)
+}
+</script>
+</html>

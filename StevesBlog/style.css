@@ -1,0 +1,113 @@
+body{
+
+	background-color: blue;
+	
+}
+
+#topbar{
+	
+	min-height:300px;
+	width:100%;
+	background-color:white;
+	
+}
+
+#topbar p{
+	
+	font-size: 6vmin;
+	display: inline-block;
+	margin-top:6%;
+	margin-left:10%;
+	color:red
+}
+
+#mainsection{
+	
+	height: 60%;
+	width: 90%;
+	background-color: white;
+	border-radius:25px;
+	margin-left: 5%;
+	margin-top: 1%;
+	
+}
+
+p{
+	
+	font-size: 4vmin;
+	display: block;
+	margin-left: 3%;
+	margin-right: 3%;
+	word-break: keep-all;
+	
+}
+
+#mainbutton{
+	
+	margin-left: 5%;
+	margin-bottom: 2%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 15px 20px;
+	display: inline-block;
+	font-size: 24px;
+	
+}
+
+#topbar2 p{
+
+	font-size: 5vmin;
+	display: inline-block;
+	margin-top: 6%;
+	margin-left: 10%;
+	
+}
+
+#topbar2{
+	
+	min-height:300px;
+	width:100%;
+	background-color:white;
+}
+
+#mainsection2{
+	
+	height: 60%;
+	width: 90%;
+	background-color: white;
+	border-radius:25px;
+	margin-left: 5%;
+	margin-top: 1%;
+	
+}
+
+p{
+	
+	font-size: 3vmin;
+	display: block;
+	margin-left: 3%;
+	margin-right: 3%;
+	word-break: keep-all;
+	
+}
+
+#chicken{
+	
+	border-radius: 25px;
+	max-width: 10%;
+	max-height: 20%;
+	
+}
+
+.chickenAnimation{
+	
+	-webkit-animation: walk 6s infinite;
+	
+}
+
+@keyframes walk {
+	
+	50% { margin-left: 80%;}
+	100% { margin-left: 0%;}
+	
+}

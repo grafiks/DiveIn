@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>AnimationBlog</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	
+</head>
+
+<body>
+
+	<div id='topbar2'>
+		<p> <b>Hi! Welcome to the animation page!</b> </p>
+		<img id ='creeper' src='creeper.png'/>
+		<button id= 'mainbutton' onclick = stopChicken()>Stop the Chicken</button>
+	</div>
+	
+	<div id='mainsection2'>
+		<img id = 'chicken' class = 'chickenAnimation' src = 'chicken.png'/>
+	</div>
+	
+</body>
+
+<script>
+
+	$('#chicken').click(function(){
+	
+		$('#mainsection2').append("<img class = 'egg' src='egg.png'/>");
+		$('.egg').draggable();
+	})
+		
+		
+	function stopChicken(){
+	
+		$("#chicken").removeClass("chickenAnimation");
+		$("#chicken").css("-webkit-animation-play-state", "pause");
+	}
+
+	var eggCount = 0;
+	
+	$('#topbar2').droppable({
+		drop: function(){
+			eggCount = eggCount+1;
+			$("p").html("There are "+eggCount+" eggs in the topbar.");
+			}
+	});
+
+	$('#topbar2').droppable({
+		out: function(){
+			eggCount = eggCount-1;
+			$("p").html("There are "+eggCount+" eggs in the topbar.<br>");
+			}
+	});
+
+</script>
+
+</html>
