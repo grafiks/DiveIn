@@ -33,6 +33,7 @@
     <div id = 'topbar'>
         <p>Welcome to Math Hedgehog!</p>
     </div>
+    <p id = 'timer' style="text-align:center; font-size: 3vmin;">Here is the timer for the test.</p>
     <div id = 'mainsection'>
         <p>Points: </p>
         <input id = 'box' type="text"/>
@@ -40,6 +41,8 @@
         <input id = 'box' type="text"/>
         <button id = 'mainbutton' type='button' onclick="send()">Print</button>
         <button id = 'mainbutton' onclick="giveProblem()">Problem of the Day</button>
+        <button id = 'mainbutton' onclick="takeTest()">HMC5 Mock Test</button>
+        <p>Math Video</p>
     </div>
 </body>
 
@@ -52,6 +55,29 @@
     function giveProblem(){
         alert("What is 1+.....+100?");
         alert("5050");
+    }
+
+    function takeTest(){
+        var time = 900;
+        var round = setInterval(function(){
+        if(time>0){
+        alert("Write the answers to the following problems on scratch paper. Send them to Teacher Fluffhog, and she will grade them." );
+        time = time-1;
+        document.getElementById("timer").innerHTML = time+" seconds left";
+        alert("What is 81x37?");
+        alert("How many prime numbers are between 1 and 100?");
+        alert("Prime factorize 1234");
+        alert("If (a+9)(a-9)=243, what is a?");
+        alert("<1+<2=100, and <3+<2=100. If the 3 angles form a straight angle, <1+<3=_.");
+        alert("(2/9)/(5/7)=_.");
+        alert("a+b=10 b+c=12 a+c=13. What is the average of these numbers?");
+        alert("125x8x25x16=_.");
+        alert("LCM(91, 14)=_.");
+        alert("Factor x^2+4x+5.");
+        }else{
+        clearInterval(round);
+        }
+        },1000)
     }
 </script>
 
