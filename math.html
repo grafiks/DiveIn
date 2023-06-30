@@ -26,6 +26,10 @@
 		padding: 15px 20px;
 		float: right;
         }
+
+        body{
+        background-color: yellow
+        }
     </style>
 </head>
 
@@ -58,12 +62,18 @@
     }
 
     function takeTest(){
-        var time = 900;
-        var round = setInterval(function(){
-        if(time>0){
         alert("Write the answers to the following problems on scratch paper. Send them to Teacher Fluffhog, and she will grade them." );
-        time = time-1;
-        document.getElementById("timer").innerHTML = time+" seconds left";
+        
+        var time = 900;
+        var round = setInterval( function() {
+            if (time>0) {
+                time = time-1;
+                document.getElementById("timer").innerHTML = time+" seconds left";
+            } else {
+                clearInterval(round);
+            }
+        }, 1000);
+
         alert("What is 81x37?");
         alert("How many prime numbers are between 1 and 100?");
         alert("Prime factorize 1234");
@@ -74,10 +84,6 @@
         alert("125x8x25x16=_.");
         alert("LCM(91, 14)=_.");
         alert("Factor x^2+4x+5.");
-        }else{
-        clearInterval(round);
-        }
-        },1000)
     }
 </script>
 
