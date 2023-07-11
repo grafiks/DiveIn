@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic-Tac-Toe</title>
+    <style>
+        .row div{
+        padding: 10px;
+        border: 1px solid black;
+        height: 100px;
+        width: 100px;
+        float: left;
+        font-size: 6vmin;
+        }
+        .row{
+        clear: both;
+        }
+
+        #mainbutton{
+        color: white;
+		background-color: blue;
+		margin: 10px 10px;
+		padding: 15px 20px;
+		float: right;
+        }
+
+        body{
+        background-color: lightcyan;
+        }
+
+        #board{
+        background-color: white;
+        border-radius: 25px;
+        height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="font-size: 6vmin; text-align: center; color: mediumturquoise;">Play a Strategy Game</p>
+    <p style="font-size: 4vmin; text-align: center;">Click on the boxes to place Xs or Os.</p>
+    <div id = 'board'>
+    <div class = 'row'>
+        <div id = '0_0' onclick="place(this)"></div>
+        <div id = '1_0' onclick="place(this)"></div>
+        <div id = '2_0' onclick="place(this)"></div>
+    </div>
+    <div class = 'row'>
+        <div id = '0_1' onclick="place(this)"></div>
+        <div id = '1_1' onclick="place(this)"></div>
+        <div id = '2_1' onclick="place(this)"></div>
+    </div>
+    <div class = 'row'>
+        <div id = '0_2' onclick="place(this)"></div>
+        <div id = '1_2' onclick="place(this)"></div>
+        <div id = '2_2' onclick="place(this)"></div>
+    </div>
+    <button id = 'mainbutton' onclick="location.href='math.html'">Back</button>
+    </div>
+</body>
+
+<script>
+    var currentPlayer = "O";
+    function place(box){
+        if(box.innerText != "") return;
+        box.innerText = currentPlayer;
+        if(currentPlayer == "O"){
+            currentPlayer = "X";
+        }else{
+            currentPlayer = "O";
+        }
+    }
+
+    // BUG: function not working yet.
+    function checkBoard(){
+        for(var i = 0; i<=2; i++){
+            var first = document.getElementById("0_"+i).innerText;
+            var second = document.getElementById("1_"+i).innerText;
+            var third = document.getElementById("2_"+i).innerText;
+            if(first == "") continue;
+            if(first == second && first == third){
+            alert("Game Over!");
+            }
+        }
+
+       for(var i = 0; i<=2; i++){
+            var first = document.getElementById(i+"_0").innerText;
+            var second = document.getElementById(i+"_1").innerText;
+            var third = document.getElementById(i+"_2").innerText;
+            if(first == "") continue;
+            if(first == second && first == third){
+            alert("Game Over!");
+            }
+        }
+        var firstD1 = document.getElementById("0_0").innerText;
+        var secondD1 = document.getElementById("1_1").innerText;
+        var thirdD1 = document.getElementById("2_2").innerText;
+        if(firstD1 != "" && firstD1 == secondD1 && firstD1 == thirdD1){
+        alert("Game Over!");
+        }
+    }
+</script>
+
+<html>

@@ -87,13 +87,14 @@
 
     function playGame() {
         var score = 0;
-        var gameLength = 60;
+        var gameLength = 6;
         var round = setInterval( function() {
             if(gameLength > 0) {
                 gameLength = gameLength - 1;
                 document.getElementById("timer").innerHTML = gameLength + " seconds left";
             } else {
-                clearInterval(round)
+                clearInterval(round);
+                alert("Game Over!");
             }
         }, 1000);
     };    
