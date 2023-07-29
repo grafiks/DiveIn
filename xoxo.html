@@ -124,10 +124,13 @@
         }
     }
 
-   /* function restart(){
-        // TODO: clear the board
-         document.getElementsByClassName('row').innerHTML="";
-    }*/
+   function restart(){
+        for(var i = 0; i<=2; i++){
+            document.getElementById(i+"_0").innerText = "";
+            document.getElementById(i+"_1").innerText = "";
+            document.getElementById(i+"_2").innerText = "";
+        }
+    }
 </script>
 
 <html>
