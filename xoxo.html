@@ -61,6 +61,8 @@
 
 <script>
     var currentPlayer = "O";
+    var winnerPlayer = currentPlayer;
+
     function place(box){
         if(box.innerText != "") return;
         box.innerText = currentPlayer;
@@ -86,9 +88,6 @@
             if(first == "") continue;
 
             if(first == second && first == third){
-                /*requestAnimationFrame(() =>{
-                alert("Game Over! Player " + currentPlayer + " wins!");
-                 });*/
                 restart();
             }
         }
@@ -102,7 +101,6 @@
             if(first == "") continue;
             
             if(first == second && first == third){
-                //alert("Game Over! Player " + currentPlayer + " wins!");
                 restart();
             }
         }
@@ -112,7 +110,6 @@
         var secondD1 = document.getElementById("1_1").innerText;
         var thirdD1 = document.getElementById("2_2").innerText;
         if(firstD1 != "" && firstD1 == secondD1 && firstD1 == thirdD1){
-            //alert("Game Over! Player " + currentPlayer + " wins!");
             restart();
         }
 
@@ -121,23 +118,20 @@
         var secondD2 = document.getElementById("1_1").innerText;
         var thirdD2 = document.getElementById("0_2").innerText;
         if(firstD2 != "" && firstD2 == secondD2 && firstD2 == thirdD2){
-            //alert("Game Over! Player " + currentPlayer + " wins!");
             restart();
         }
     }
 
    function restart(){
-    setTimeout(() =>{
-                alert("Game Over! Player " + currentPlayer + " wins!");
+    winnerPlayer = currentPlayer;
+    setTimeout(() => {
+                alert("Game Over! Player " + winnerPlayer + " wins!");
                 for(var i = 0; i<=2; i++){
                     document.getElementById(i+"_0").innerText = "";
                     document.getElementById(i+"_1").innerText = "";
                     document.getElementById(i+"_2").innerText = "";
                  }
                 }, 0);
-           /* requestAnimationFrame(() =>{
-                alert("Game Over! Player " + currentPlayer + " wins!");
-                 });*/
         }
 </script>
 
