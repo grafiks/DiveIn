@@ -1,4 +1,4 @@
-<!DOCTYPEhtml>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -22,6 +22,19 @@
         border: 5px solid black;
         border-radius: 20%;
         }
+        #info{
+        font-size: 18pt;
+        background-color: rgba(221, 160, 221, 0.801);
+        text-align: center;
+        border-radius: 25px;
+        height: 25%;
+        width: 30%;
+        }
+
+        #coin{
+        height: 40px;
+        width: 40px;
+        }
     </style>
 </head>
 
@@ -33,12 +46,22 @@
     <img id = 'app' src='math.png' onclick="location.href='math.html'"/>
     <img id = 'app' src='reading.png'/>
     <img id = 'app' src='science.png'/>
+    <div id = 'info'>
+        <p>Name:</p>
+        <input id = 'box' type="text"/>
+        <p>Coins today:</p>
+        <img id = 'coin' src='coin.png' onclick="showNumber()"/>
+    </div>
 </body>
 
 <script>
     function showPercentage(){
         var number = "79%";
         alert(number);
+    }
+
+    function showNumber(){
+        alert('You have earned 25 Coins today.');
     }
 </script>
 
