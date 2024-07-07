@@ -36,7 +36,7 @@
 		<p>Name</p>
 		<input type="text"/>
 		<p>Age</p>
-		<input type="text"/>
+		<input type="text" id="agebox"/>
 		<p>Lifeguard, teacher, or director?</p>
 		<input type="text"/>
 		<button id = 'mainbutton' type='button' onclick = approve()>Register</button>
@@ -48,13 +48,15 @@
 <script>
 	function approve(){	
 		var message = "You have now registered for Dive In.";
-		alert(message);
-		
-		
+		var no = "Sorry! You are not old enough.";
+		var number = document.getElementById("agebox");
+		var age = number.value
+		if(age>12){
+		alert(message);	
+		}else{
+		alert(no)
+		}
 	}
-		//var name = prompt("Enter your full name.");
-		//if(name !== null){
-		//$('#mainsection').append("<p onclick = un-register()>'+name+'</p>")
 </script>
 
 </html>
