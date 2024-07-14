@@ -3,9 +3,57 @@
 
 <head>
     <title>WritingHUB</title>
+    <style>
+        #head{
+        text-align: center;
+        font-size: 8vmin;
+        background-color: sandybrown;
+        }
+        #mainbutton{
+        background-color: bisque;
+        font-size: 4vmin;
+        border-width: 0px;
+        height: 300px;
+        width: 400px;
+        border-radius: 30px;
+        word-break: keep-all;
+        }
+        #navigation{
+        width: 265px;
+        height: 100px;
+        border-radius: 0px;
+        border: 1px solid black;
+        background-color:beige;
+        font-size: 2vmin;
+        margin:0px;
+        }
+        #back{
+        float: left;
+        position: relative;
+        left: 50%;
+        }
+        body{
+        background-color: blanchedalmond
+        }
+    </style>
 </head>
 
 <body>
+    <div id = 'head'>
+        <p>An Online Tool for Recreating Your Writing</p>
+    </div>
+    <div id = 'info'>
+        <button id = 'mainbutton'> <b>Prompt of the Day:</b> A house cat walks out into the dark forest and finds...</button>
+        <button id = 'mainbutton'><b>Trending Prompts:</b>Your dream house design<br/>
+        If you were any object you want, what would you be?</button>
+    </div>
+    <div id = 'navigationbar'>
+        <button id = 'navigation'>Home</button>
+        <button id = 'navigation'>Forums</button>
+        <button id = 'navigation'>Publish</button>
+        <button id = 'navigation'>Exhibition Hall</button>
+        <button id = 'navigation'>My</button>
+    </div>
     <img id = 'back' src='bellybutton.png' onclick ="location.href='ha.html'"/>
 </body>
 
