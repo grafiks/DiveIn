@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forums</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <style>
+        #click{
+        font-size: 3vmin;
+        background-color: antiquewhite;
+        border-radius: 10px;
+        padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="font-size: 6vmin; text-align: center;">Forums</p>
+    <input id = 'textbox' type = 'text'/>
+    <button id = 'plus' onclick ="addforum()">+</button>
+    <div id = 'my'>
+        <p><h1>My Forums</h1></p>
+        <p id = 'click'>Your dream house design</p>
+        <p id = 'click'>I opened my eyes and had no idea where I was</p>
+        <p id = 'click'>When I woke up, I found out I was...</p>
+    </div>
+        <p><h1>All Forums</h1></p>
+        <p id = 'click'>A house cat walks out into the dark forest and finds...</p>
+        <p id = 'click'>If you were any object you want, what would you be?</p>
+        <p id = 'click'>We were the only four people left on Earth...</p>
+        <p id = 'link'> see all...</p>
+</body>
+
+<script>
+    function addforum(){
+        var message = document.createElement("p");
+        message.id = 'click';
+        message.innerHTML = document.getElementById("textbox").value;
+        document.getElementById("my").appendChild(message);
+    }
+</script>
+
+</html>
