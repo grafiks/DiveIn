@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>My</title>
+        <style>
+            #miao, #username{
+                display: inline-block;
+            }
+            #stories, #awards, #vocab, #quotes{
+                display: inline-block;
+                margin: 50px;
+                background-color: antiquewhite
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = 'top'>
+            <img id = 'miao' src='Frostblaze.png'/>
+            <p id = 'username' style = "font-size: 6vmin;">FrostBlaze314</p>
+        </div>
+        <div id = 'stories'>
+            <p><h1>My Stories</h1></p>
+            <p>13 written<br/>
+            5 published<br/>
+            1 in progress</p>
+        </div>
+        <div id = 'awards'>
+            <p><h1>My Awards</h1></p>
+            <p>Write 1 Story<br/>
+            Write 5 Stories<br/>
+            Write 10 Stories<br/>
+            Publish 1 Story<br/>
+            Publish 5 Stories<br/>
+            Achieve 500 Words in Length<br/>
+            Achieve 750 Words in Length<br/>
+            Achieve 1,000 Words in Length</p>
+        </div>
+        <div id = 'vocab'>
+            <p><h1>My Vocab</h1></p>
+            <input id = 'vocabbox' type ='text'/>
+            <button id = 'plus' onclick="addword()">+</button>
+        </div>
+        <div id = 'quotes'>
+            <p><h1>My Quotes</h1></p>
+            <input id = 'quotebox' type ='text'/>
+            <button id = 'plus' onclick="addquote()">+</button>
+        </div>
+    </body>
+
+    <script>
+        function addword(){
+            var word = document.createElement('p');
+            word.innerHTML = document.getElementById('vocabbox').value;
+            document.getElementById('vocab').appendChild(word);
+
+        }
+        function addquote(){
+            var statement = document.createElement('p');
+            statement.innerHTML = document.getElementById('quotebox').value;
+            document.getElementById('quotes').appendChild(statement);
+
+        }
+    </script>
+
+</html>
